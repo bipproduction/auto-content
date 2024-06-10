@@ -12,7 +12,14 @@ evn.on("play", (data) => {
     mqttClient.publish("play", data.toString())
 })
 
-export async function GET() {
+export async function GET(req: Request) {
+    const key = new URL(req.url).searchParams.get('key');
+    if (!key) {
+        return Response.json({
+            message: 'start not found',
+        });
+    }
+
     if (isRunning) {
         return Response.json({
             message: 'please wait already running ...',
