@@ -74,6 +74,7 @@ export default function Home() {
       <Stack p={"md"}>
         <Title>AUTO</Title>
         <Text>Tambah diskripsi</Text>
+        <Text>sub des</Text>
         <Button.Group>
           {nav?.item?.map((item, index) => (
             <Button
