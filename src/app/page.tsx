@@ -3,7 +3,7 @@ import { useShallowEffect } from "@mantine/hooks";
 import mqttClient from '@/util/mqttClient';
 import mqtt from "mqtt";
 import { useState } from "react";
-import { Box, Button, Code, Group, Stack } from "@mantine/core";
+import { Box, Button, Code, Group, Stack, Title } from "@mantine/core";
 
 const MQTT_URL = 'wss://io.wibudev.com';
 
@@ -72,6 +72,7 @@ export default function Home() {
   return (
     <Group>
       <Stack p={"md"}>
+        <Title>AUTO</Title>
         <Button.Group>
           {nav?.item?.map((item, index) => (
             <Button
